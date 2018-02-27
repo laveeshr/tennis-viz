@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-fluid" style="margin: 10px">
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link" href="index.html">Home</a>
+        <a class="flex-sm-fill text-sm-center nav-link active" href="#">Bonus</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="story.html">Write Up</a>
+    </nav>
+    <br>
+    <div class="card">
+        <h4 class="card-header">Scatterplot</h4>
+        <div class="card-block">
+            <p class="card-text">Plotted the players which had maximum number of wins for the particular year.<br>
+            (Mostly all players had maximum of 7 wins per year hence the straight line).
+            </p>
+        </div>
+        <div id="scatterPlot"></div>
+    </div>
+</div>
+
+<!--Scripts-->
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="d3-tip.js"></script>
+<script src="d3-legend.min.js"></script>
+<script src="js/scatter-plot.js"></script>
+<script>
+    scatterPlot('#scatterPlot');
+</script>
+</body>
+</html>

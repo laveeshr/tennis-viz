@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+              integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container-fluid" style="margin: 10px">
+            <nav class="nav nav-pills flex-column flex-sm-row">
+                <a class="flex-sm-fill text-sm-center nav-link active" href="#">Home</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="bonus.html">Bonus</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="story.html">Write Up</a>
+            </nav>
+            <br>
+            <div class="card">
+                <h4 class="card-header">Distribution Chart based on the number of players</h4>
+                <div class="card-block">
+                    <p class="card-text">Click on the country to view it's players. (Countries with < 1 player are not clickable).</p>
+                </div>
+                <div id="worldMap"></div>
+            </div>
+            <br>
+            <br>
+            <div class="card" id="playerData" style="height: 700px; display: none">
+                <!--<h5 id="countryName" class="card-header"></h5>-->
+                <div class="card-block h-50">
+                    <h4 class="card-title" id="countryName"></h4>
+                    <p class="card-text">The players for the selected country are listed below with their number of wins.<br>
+                    Select any player to view the difference between the avg of the Player's stats and their opponents stats.
+                    </p>
+                    <div class="row h-100">
+                        <div class="col-4" style="overflow: scroll; height: 85%">
+
+                            <!--List Element-->
+                            <a class="list-group-item d-flex justify-content-between align-items-center playerListEl"
+                               id="playerListEl" style="display: none !important;" >    <!--onclick="activatePlayer(this)"-->
+                                <span class="playerName"></span>
+                                <span class="badge badge-info badge-pill playerWins"></span>
+                            </a>
+
+                            <!-- List group -->
+                            <div class="list-group" id="playerList"></div>
+                        </div>
+                        <div class="col-8" id="playerChart">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Scripts-->
+        <script src="http://d3js.org/d3.v4.min.js"></script>
+        <script src="http://d3js.org/queue.v1.min.js"></script>
+        <script src="http://d3js.org/topojson.v1.min.js"></script>
+        <script src="d3-tip.js"></script>
+        <script src="d3-legend.min.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/player.js"></script>
+        <script src="js/diverging-graph.js"></script>
+        <script>
+//            $('#playerData').hide();
+            renderWorldMap('#worldMap');
+        </script>
+    </body>
+</html>

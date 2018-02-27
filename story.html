@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-fluid" style="margin: 10px">
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link" href="index.html">Home</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="bonus.html">Bonus</a>
+        <a class="flex-sm-fill text-sm-center nav-link active" href="#">Write Up</a>
+    </nav>
+    <br>
+    <div class="card">
+        <h4 class="card-header">Assignment	#2:	Interactive	Visualization Exercise</h4>
+        <div class="card-block">
+            <p class="card-text">
+                The given visualisation provides a comprehensive description of the 10 years Australia Open Matches
+                based on the number of players per country using interactions.
+            </p>
+            <div>
+                It provides a set of interactions to portray the complete story.
+                <ul>
+                    <li>
+                        Initially a world map is loaded into view depicting the number of players that each country has.
+                    </li>
+                    <li>
+                        By clicking a certain country, all the players of the selected country are listed alongwith
+                        their total number of wins in the 10 years span of data.
+                    </li>
+                    <li>
+                        By selecting a player, a diverging graph loads up the comparison of the average of the key aspects
+                        of the player Vs the average of the key aspects of his opponents in all the matches that the player
+                        won.
+                    </li>
+                    <li>
+                        This graph provides an insight into the parameters that promoted the wins of the player and also
+                        the parameters that the player needs to improve inorder to win against his opponents.
+                    </li>
+                    <li>
+                        By selecting another player or another country at any time re-renders the graph in a smooth transition
+                        making it dynamic by nature.
+                    </li>
+                    <li>
+                        If any key attribute is 0 for a player and his opponent, then that attribute is skipped in the graph.
+                    </li>
+                    <li>
+                        All the charts are equipped with tooltips to help the viewer get a better understanding of the data.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="card-text">
+                <table class="table table-bordered">
+                    <caption>The key aspects used to visualise the player's strengths and weaknesses.</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Key Aspect</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Reason</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">Ace</td>
+                            <td>Service Variable</td>
+                            <td>
+                                Ace is a good serve that was not received by the opponent. This is an important measure
+                                as aces lead to winner points.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">AvgFirstServe</td>
+                            <td>Service Variable</td>
+                            <td>
+                                This is the Average of the first serve in KPH. Important to score as first serve determines
+                                the pace of the game.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">AvgSecServe</td>
+                            <td>Service Variable</td>
+                            <td>
+                                This is the Average of the second serve in KPH. This is also important as it signifies that the first
+                                service was a bust but the player picked up the pace with the second serve.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">FastServe</td>
+                            <td>Service Variable</td>
+                            <td>
+                                This is the fastest serve served in the game in KPH. Speed plays an important role in tennis
+                                as a fast serve maybe harder for the opponent to return leading to an Ace.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Double</td>
+                            <td>Service Variable</td>
+                            <td>
+                                This is the fault on service point where the player fails to serve inside the service box on both
+                                service chances. This is an important factor as it signifies that the player lost a whole
+                                service point and subsequently a match point.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Error</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                This is the point of mistakes. Errors are important to tally as they let us know about the
+                                areas where the player needs to improve.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Total</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                This is the total points won of the game. Total points won in the game might also include
+                                the points that were lost by the opponent and not just won by the player.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Winner</td>
+                            <td>Match Performance Variable</td>
+                            <td>
+                                These are the points won that were not received by the opponent. This is important to note
+                                as they signify the points where the player's game was the strongest since the opponent couldn't
+                                return the ball.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Scripts-->
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="d3-tip.js"></script>
+<script src="d3-legend.min.js"></script>
+</body>
+</html>
